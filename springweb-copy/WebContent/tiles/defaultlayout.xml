@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	<definition name="default" template="/templatejsp/default.jsp">
+		 <put-attribute name="title" value="Employee Home" ></put-attribute>
+		 <put-attribute name="header" value="/templatejsp/header.jsp" ></put-attribute>
+		 <put-attribute name="footer" value="/templatejsp/footer.jsp" ></put-attribute>
+		 <put-attribute name="content" value="/templatejsp/content.jsp" ></put-attribute>
+		 <put-attribute name="menu" value="/templatejsp/menu.jsp" ></put-attribute>
+		 <put-attribute name="logintext" value="/templatejsp/logintext.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="NewFile"  extends="default" >
+		 <put-attribute name="title" value="User Home" ></put-attribute>
+		 <put-attribute name="menu" value="/templatejsp/NewFile.jsp" ></put-attribute>
+		 <put-attribute name="content" value="/templatejsp/empList.jsp" ></put-attribute>
+		 <put-attribute name="logintext" value="/templatejsp/logged_in_text.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="login"  extends="default" >
+		 <put-attribute name="title" value="Login" ></put-attribute>
+		 <put-attribute name="menu" value="/templatejsp/blank.jsp" ></put-attribute>
+		 <put-attribute name="content" value="/templatejsp/login.jsp" ></put-attribute>
+		 <put-attribute name="logintext" value="/templatejsp/blank.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="empList"  extends="NewFile" ></definition>
+	
+	<definition name="error"  extends="login" >
+	<put-attribute name="menu" value="/templatejsp/NewFile.jsp" ></put-attribute>
+	<put-attribute name="content" value="/templatejsp/error.jsp" ></put-attribute>
+	<put-attribute name="logintext" value="/templatejsp/logged_in_text.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="addEmployee"  extends="login" >
+	<put-attribute name="title" value="Add Employee" ></put-attribute>
+	<put-attribute name="content" value="/templatejsp/addEmployee.jsp" ></put-attribute>
+	<put-attribute name="logintext" value="/templatejsp/logged_in_text.jsp" ></put-attribute>
+	<put-attribute name="menu" value="/templatejsp/NewFile.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="usersuccess"  extends="login" >
+	<put-attribute name="title" value="Success!!" ></put-attribute>
+	<put-attribute name="content" value="/templatejsp/usersuccess.jsp" ></put-attribute>
+	<put-attribute name="logintext" value="/templatejsp/logintext.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="userForm"  extends="login" >
+	<put-attribute name="title" value="Register Yourself" ></put-attribute>
+	<put-attribute name="content" value="/templatejsp/userForm.jsp" ></put-attribute>
+	<put-attribute name="logintext" value="/templatejsp/logintext.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="editEmployee"  extends="addEmployee" >
+	<put-attribute name="content" value="/templatejsp/editEmployee.jsp" ></put-attribute>
+	</definition>
+	
+	<definition name="EmpCreated"  extends="NewFile" >
+		<put-attribute name="content" value="/templatejsp/EmpCreated.jsp" ></put-attribute>
+	</definition>
+	<definition name="DbError"  extends="error" >
+	<put-attribute name="content" value="/templatejsp/DbError.jsp" ></put-attribute>
+	</definition>
+	<definition name="sendMessage"  extends="addEmployee" >
+		<put-attribute name="title" value="Send Message" ></put-attribute>
+		<put-attribute name="content" value="/templatejsp/sendMessage.jsp" ></put-attribute>
+	</definition>
+	<definition name="MessageSent"  extends="NewFile" >
+		<put-attribute name="content" value="/templatejsp/MessageSentSuccess.jsp" ></put-attribute>
+	</definition>
+	<definition name="ShowSentMsgView"  extends="NewFile" >
+		<put-attribute name="content" value="/templatejsp/ShowSentMessages.jsp" ></put-attribute>
+	</definition>	
+	<definition name="ReceivedMessages"  extends="NewFile" >
+		<put-attribute name="content" value="/templatejsp/ReceivedMessages.jsp" ></put-attribute>
+	</definition>
+</tiles-definitions>       
